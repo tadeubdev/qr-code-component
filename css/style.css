@@ -1,3 +1,10 @@
+:root {
+    --color-white: hsl(0, 0%, 100%);
+    --color-light-gray: hsl(212, 45%, 89%);
+    --color-grayish-blue: hsl(220, 15%, 55%);
+    --color-dark-blue: hsl(218, 44%, 22%);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -8,8 +15,61 @@ html, body {
 
 body {
     padding: 0;
+    margin: 0;
     font-family: 'Outfit', sans-serif;
+    background-color: var(--color-light-gray);
+    display: grid;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "footer";
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+#container {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content {
+    background-color: var(--color-white);
+    width: 350px;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#content-image {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+#content-header {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+#content-text {
+    font-size: 15px;
+    padding: 0 30px;
+    color: var(--color-grayish-blue);
+}
+
+#attribution {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    text-align: center;
+    color: rgba(0,0,0,.7)
+}
+
+#attribution a {
+    color: var(--color-dark-blue)
+}
